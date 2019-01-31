@@ -10,12 +10,12 @@ namespace Template.Api.Dominio.Interfaces
         where TContexto : DbContext
         where TEntidade : EntidadeBase
     {
-        bool ExisteEntidade(decimal id);
+        bool ExisteEntidade(int id);
         IEnumerable<TEntidade> ListarTodos();
-        TEntidade ObterPorId(decimal id);
+        TEntidade ObterPorId(int id);
 
-        Task<bool> ExisteEntidadeAssincrono(decimal id);
+        Task<bool> ExisteEntidadeAssincrono(int id);
         Task<List<TEntidade>> ListarTodosAssincrono();
-        Task<TEntidade> ObterPorIdAssincrono(decimal id);
+        Task<TEntidade> ObterPorIdAssincrono(int id);
     }
 }

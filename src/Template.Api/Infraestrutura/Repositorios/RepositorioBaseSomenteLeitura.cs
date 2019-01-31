@@ -22,12 +22,12 @@ namespace Template.Api.Infraestrutura.Repositorios
             _dbSet = contexto.Set<TEntidade>();
         }
 
-        public bool ExisteEntidade(decimal id)
+        public bool ExisteEntidade(int id)
         {
             return _dbSet.AsNoTracking().Any(e => e.Id == id);
         }
 
-        public TEntidade ObterPorId(decimal id)
+        public TEntidade ObterPorId(int id)
         {
             return _dbSet.Find(id);
         }
@@ -37,12 +37,12 @@ namespace Template.Api.Infraestrutura.Repositorios
             return _dbSet.AsNoTracking().AsEnumerable();
         }
 
-        public async Task<bool> ExisteEntidadeAssincrono(decimal id)
+        public async Task<bool> ExisteEntidadeAssincrono(int id)
         {
             return await _dbSet.AsNoTracking().AnyAsync(e => e.Id == id);
         }
 
-        public async Task<TEntidade> ObterPorIdAssincrono(decimal id)
+        public async Task<TEntidade> ObterPorIdAssincrono(int id)
         {
             return await _dbSet.FindAsync(id);
         }
