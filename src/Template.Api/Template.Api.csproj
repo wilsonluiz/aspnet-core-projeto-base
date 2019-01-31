@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <Folder Include="Dominio\Dtos\" />
+    <Folder Include="Infraestrutura\Repositorios\" />
   </ItemGroup>
 
 </Project>

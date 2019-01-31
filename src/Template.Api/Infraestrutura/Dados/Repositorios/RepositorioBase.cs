@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Template.Api.Dominio.Entidades;
 using Template.Api.Dominio.Interfaces;
 
-namespace Template.Api.Infraestrutura.Repositorios
+namespace Template.Api.Infraestrutura.Dados.Repositorios
 {
     public class RepositorioBase<TContexto, TEntidade> :
         RepositorioBaseSomenteLeitura<TContexto, TEntidade>,

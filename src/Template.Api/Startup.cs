@@ -13,7 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Template.Api.Dominio.Interfaces;
 using Template.Api.Infraestrutura.Dados;
-using Template.Api.Infraestrutura.Repositorios;
+using Template.Api.Infraestrutura.Dados.Repositorios;
 
 namespace Template.Api
 {
