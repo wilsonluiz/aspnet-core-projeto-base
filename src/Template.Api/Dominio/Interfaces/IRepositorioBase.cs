@@ -4,13 +4,13 @@ using Template.Api.Dominio.Entidades;
 
 namespace Template.Api.Dominio.Interfaces
 {
-    public interface IRepositorio<TContexto, TEntidade> : IRepositorioSomenteLeitura<TContexto, TEntidade>
+    public interface IRepositorioBase<TContexto, TEntidade> : IRepositorioBaseSomenteLeitura<TContexto, TEntidade>
         where TContexto : DbContext
         where TEntidade : EntidadeBase
     {
         /// <summary>
         ///     Adiciona a entidade no contexto.
-        ///     Salva as alterações realizadas no contexto, no banco de dados
+        ///     Salva as alterações, realizadas no contexto, no banco de dados
         /// </summary>
         /// <param name="entidade">Entidade a ser adicionada</param>
         /// <returns></returns>
@@ -18,7 +18,7 @@ namespace Template.Api.Dominio.Interfaces
 
         /// <summary>
         ///     Altera o 'estado' da entidade para 'Modified' (modificada) no contexto.
-        ///     Salva as alterações realizadas no contexto, no banco de dados
+        ///     Salva as alterações, realizadas no contexto, no banco de dados
         /// </summary>
         /// <param name="entidade">Entidade a ser alterada</param>
         /// <returns></returns>
@@ -26,7 +26,7 @@ namespace Template.Api.Dominio.Interfaces
 
         /// <summary>
         ///     Remove a entidade do contexto.
-        ///     Salva as alterações realizadas no contexto, no banco de dados
+        ///     Salva as alterações, realizadas no contexto, no banco de dados
         /// </summary>
         /// <param name="entidade">Entidade a ser removida</param>
         /// <returns></returns>

@@ -6,7 +6,7 @@ using Template.Api.Dominio.Entidades;
 
 namespace Template.Api.Dominio.Interfaces
 {
-    public interface IRepositorioSomenteLeitura<TContexto, TEntidade> : IDisposable
+    public interface IRepositorioBaseSomenteLeitura<TContexto, TEntidade> : IDisposable
         where TContexto : DbContext
         where TEntidade : EntidadeBase
     {
