@@ -10,6 +10,6 @@ namespace Template.Api.Dominio.Entidades.ControleAcesso
         public string Email { get; set; }
         public string Senha { get; set; }
         public DateTime DataNascimento { get; set; }
-        public DateTime DataExclusao { get; set; }
+        public DateTime? DataExclusao { get; set; }
     }
 }

@@ -6,8 +6,8 @@ namespace Template.Api.Dominio.Entidades.Mensageria
     public class DestinatarioMensagem : EntidadeBase
     {
         public string Conteudo { get; set; }
-        public DateTime DataLeitura { get; set; }
-        public DateTime DataArquivamento { get; set; }
+        public DateTime? DataLeitura { get; set; }
+        public DateTime? DataArquivamento { get; set; }
 
         public int MensagemId { get; set; }
         public int UsuarioDestinatarioId { get; set; }
