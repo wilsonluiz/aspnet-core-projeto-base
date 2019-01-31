@@ -34,11 +34,11 @@ namespace Template.Api
             services.AddScoped(typeof(IRepositorioBase<,>), typeof(RepositorioBase<,>));
             services.AddScoped(typeof(IRepositorioBaseSomenteLeitura<,>), typeof(RepositorioBaseSomenteLeitura<,>));
 
-            services.AddSingleton<IConfiguration>(Configuration);
+            // services.AddSingleton<IConfiguration>(Configuration);
 
-            //var conn = Configuration.GetConnectionString("ContextoTemplate");
+            var conn = Configuration.GetConnectionString("ContextoTemplate");
 
-            services.AddDbContext<ContextoTemplate>(options => options.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = TemplateBD; Trusted_Connection = True;"));
+            services.AddDbContext<ContextoTemplate>(options => options.UseSqlServer(conn));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
