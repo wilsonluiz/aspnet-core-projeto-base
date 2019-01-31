@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Template.Api.Dominio.Entidades.ControleAcesso
 {
-    public class Perfil
+    public class Perfil : EntidadeBase
     {
-        
+        public string Nome { get; set; }
+        public DateTime DataExclusao { get; set; }
     }
 }
