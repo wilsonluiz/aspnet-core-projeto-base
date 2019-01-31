@@ -7,8 +7,7 @@ namespace Template.Api.Infraestrutura.Repositorios
 {
     public class RepositorioBase<TContexto, TEntidade> :
         RepositorioBaseSomenteLeitura<TContexto, TEntidade>,
-        IRepositorio<TEntidade>,
-        IRepositorioAssincrono<TEntidade>
+        IRepositorio<TContexto, TEntidade>
         where TContexto : DbContext
         where TEntidade : EntidadeBase
     {

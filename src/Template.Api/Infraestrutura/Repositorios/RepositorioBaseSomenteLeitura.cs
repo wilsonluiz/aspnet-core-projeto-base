@@ -9,8 +9,7 @@ using Template.Api.Dominio.Interfaces;
 namespace Template.Api.Infraestrutura.Repositorios
 {
     public class RepositorioBaseSomenteLeitura<TContexto, TEntidade> :
-        IRepositorioSomenteLeitura<TEntidade>,
-        IRepositorioSomenteLeituraAssincrono<TEntidade>
+        IRepositorioSomenteLeitura<TContexto, TEntidade>
         where TEntidade : EntidadeBase
         where TContexto : DbContext
     {
