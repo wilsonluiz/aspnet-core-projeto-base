@@ -53,5 +53,12 @@ namespace Template.Api.Controllers
 
             return View();
         }
+
+        [HttpGet("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "App");
+        }
     }
 }
