@@ -3,8 +3,9 @@ using Template.Api.Dominio.Entidades.ControleAcesso;
 
 namespace Template.Api.Dominio.Entidades.Historico
 {
-    public class HistoricoConsulta : EntidadeBase
+    public class HistoricoConsulta : IEntidade
     {
+        public int Id { get; set; }
         public DateTime DataExecucao { get; set; }
         public string NomeConsulta { get; set; }
         public string Sql { get; set; }

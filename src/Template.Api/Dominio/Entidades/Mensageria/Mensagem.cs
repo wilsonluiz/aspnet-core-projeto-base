@@ -3,8 +3,9 @@ using Template.Api.Dominio.Entidades.ControleAcesso;
 
 namespace Template.Api.Dominio.Entidades.Mensageria
 {
-    public class Mensagem : EntidadeBase
+    public class Mensagem : IEntidade
     {
+        public int Id { get; set; }
         public DateTime DataEnvio { get; set; }
         public int MensagemOrigemId { get; set; }
         public int UsuarioId { get; set; }

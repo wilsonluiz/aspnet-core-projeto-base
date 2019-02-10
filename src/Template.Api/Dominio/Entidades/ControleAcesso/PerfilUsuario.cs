@@ -1,7 +1,8 @@
 ﻿namespace Template.Api.Dominio.Entidades.ControleAcesso
 {
-    public class PerfilUsuario : EntidadeBase
+    public class PerfilUsuario : IEntidade
     {
+        public int Id { get; set; }
         public int UsuarioId { get; set; }
         public int PerfilId { get; set; }
 

@@ -3,8 +3,9 @@ using Template.Api.Dominio.Entidades.ControleAcesso;
 
 namespace Template.Api.Dominio.Entidades.Auditoria
 {
-    public class AuditoriaTabela : EntidadeBase
+    public class AuditoriaTabela : IEntidade
     {
+        public int Id { get; set; }
         public DateTime DataOcorrencia { get; set; }
         public string NomeTabela { get; set; }
         public int IdRegistro { get; set; }

@@ -10,7 +10,7 @@ namespace Template.Api.Infraestrutura.Dados.Repositorios
 {
     public class RepositorioBaseSomenteLeitura<TContexto, TEntidade> :
         IRepositorioBaseSomenteLeitura<TContexto, TEntidade>
-        where TEntidade : EntidadeBase
+        where TEntidade : class, IEntidade
         where TContexto : DbContext
     {
         private readonly DbSet<TEntidade> _dbSet;

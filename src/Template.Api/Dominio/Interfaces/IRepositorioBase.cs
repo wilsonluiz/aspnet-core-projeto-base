@@ -6,7 +6,7 @@ namespace Template.Api.Dominio.Interfaces
 {
     public interface IRepositorioBase<TContexto, TEntidade> : IRepositorioBaseSomenteLeitura<TContexto, TEntidade>
         where TContexto : DbContext
-        where TEntidade : EntidadeBase
+        where TEntidade : class, IEntidade
     {
         /// <summary>
         ///     Adiciona a entidade no contexto.

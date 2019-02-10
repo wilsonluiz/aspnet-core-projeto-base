@@ -8,7 +8,7 @@ namespace Template.Api.Dominio.Interfaces
 {
     public interface IRepositorioBaseSomenteLeitura<TContexto, TEntidade> : IDisposable
         where TContexto : DbContext
-        where TEntidade : EntidadeBase
+        where TEntidade : class, IEntidade
     {
         bool ExisteEntidade(int id);
         IEnumerable<TEntidade> ListarTodos();
