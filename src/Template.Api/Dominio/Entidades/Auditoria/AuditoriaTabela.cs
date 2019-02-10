@@ -9,7 +9,7 @@ namespace Template.Api.Dominio.Entidades.Auditoria
         public string NomeTabela { get; set; }
         public int IdRegistro { get; set; }
         public string AcaoRealizado { get; set; }
-        public int IdUsuario { get; set; }
+        public int UsuarioId { get; set; }
 
         public Usuario Usuario { get; set; }
     }
