@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Template.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Template.Api.Dominio.Interfaces.IRepositorioBase`2.Adicionar(`1)">
+            <summary>
+                Adiciona a entidade no contexto.
+                Salva as alterações, realizadas no contexto, no banco de dados
+            </summary>
+            <param name="entidade">Entidade a ser adicionada</param>
+            <returns></returns>
+        </member>
+        <member name="M:Template.Api.Dominio.Interfaces.IRepositorioBase`2.Atualizar(`1)">
+            <summary>
+                Altera o 'estado' da entidade para 'Modified' (modificada) no contexto.
+                Salva as alterações, realizadas no contexto, no banco de dados
+            </summary>
+            <param name="entidade">Entidade a ser alterada</param>
+            <returns></returns>
+        </member>
+        <member name="M:Template.Api.Dominio.Interfaces.IRepositorioBase`2.Remover(`1)">
+            <summary>
+                Remove a entidade do contexto.
+                Salva as alterações, realizadas no contexto, no banco de dados
+            </summary>
+            <param name="entidade">Entidade a ser removida</param>
+            <returns></returns>
+        </member>
+        <member name="M:Template.Api.Dominio.Interfaces.IRepositorioBase`2.AdicionarAssincrono(`1)">
+            <summary>
+                Adiciona a entidade no contexto.
+                Salva, de forma assíncrona, as alterações realizadas no contexto, no banco de dados
+            </summary>
+            <param name="entidade">Entidade a ser adicionada</param>
+            <remarks>
+                Use 'await' para ter a certeza de que qualquer operação assíncrona tenha sido completada
+                antes de outro método seja chamado utilizando o mesmo contexto
+            </remarks>
+            <returns>
+                Uma 'task' (tarefa) que representa a operação assícrona que foi salva
+            </returns>
+        </member>
+        <member name="M:Template.Api.Dominio.Interfaces.IRepositorioBase`2.AtualizarAssincrono(`1)">
+            <summary>
+                Altera o 'estado' da entidade para 'Modified' (modificada) no contexto.
+                Salva, de forma assíncrona, as alterações realizadas no contexto, no banco de dados
+            </summary>
+            <param name="entidade">Entidade a ser alterada</param>
+            <remarks>
+                Use 'await' para ter a certeza de que qualquer operação assíncrona tenha sido completada
+                antes de outro método seja chamado utilizando o mesmo contexto
+            </remarks>
+            <returns>
+                Uma 'task' (tarefa) que representa a operação assícrona que foi salva
+            </returns>
+        </member>
+        <member name="M:Template.Api.Dominio.Interfaces.IRepositorioBase`2.RemoverAssincrono(`1)">
+            <summary>
+                Remove a entidade do contexto.
+                Salva, de forma assíncrona, as alterações realizadas no contexto, no banco de dados
+            </summary>
+            <param name="entidade">Entidade a ser removida</param>
+            <remarks>
+                Use 'await' para ter a certeza de que qualquer operação assíncrona tenha sido completada
+                antes de outro método seja chamado utilizando o mesmo contexto
+            </remarks>
+            <returns>
+                Uma 'task' (tarefa) que representa a operação assícrona que foi salva
+            </returns>
+        </member>
+        <member name="M:Template.Api.Infraestrutura.Dados.Repositorios.RepositorioBase`2.Adicionar(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Template.Api.Infraestrutura.Dados.Repositorios.RepositorioBase`2.Atualizar(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Template.Api.Infraestrutura.Dados.Repositorios.RepositorioBase`2.Remover(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Template.Api.Infraestrutura.Dados.Repositorios.RepositorioBase`2.AdicionarAssincrono(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Template.Api.Infraestrutura.Dados.Repositorios.RepositorioBase`2.AtualizarAssincrono(`1)">
+            <inheritdoc />
+        </member>
+        <member name="M:Template.Api.Infraestrutura.Dados.Repositorios.RepositorioBase`2.RemoverAssincrono(`1)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -9,6 +9,6 @@ namespace Template.Api.Dominio.Entidades.ControleAcesso
     public class Perfil : EntidadeBase
     {
         public string Nome { get; set; }
-        public DateTime DataExclusao { get; set; }
+        public DateTime? DataExclusao { get; set; }
     }
 }
