@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using Template.Api.Dominio.Entidades.ControleAcesso;
 using Template.Api.Dominio.Interfaces;
 using Template.Api.Infraestrutura.Dados;
 using Template.Api.Infraestrutura.Dados.Repositorios;
@@ -30,7 +31,11 @@ namespace Template.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ContextoTemplate>();
+            services.AddIdentity<Usuario, Perfil>(config =>
+            {
+                config.User.RequireUniqueEmail = true;
+
+            }).AddEntityFrameworkStores<ContextoTemplate>();
 
             services.AddScoped(typeof(IRepositorioBase<,>), typeof(RepositorioBase<,>));
             services.AddScoped(typeof(IRepositorioBaseSomenteLeitura<,>), typeof(RepositorioBaseSomenteLeitura<,>));
@@ -74,6 +79,9 @@ namespace Template.Api
             });
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
+
             app.UseMvc();
         }
     }
