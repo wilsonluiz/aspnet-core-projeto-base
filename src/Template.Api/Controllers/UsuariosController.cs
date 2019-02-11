@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Template.Api.Dominio.Entidades.ControleAcesso;
 using Template.Api.Dominio.Interfaces;
@@ -14,10 +15,13 @@ namespace Template.Api.Controllers
     public class UsuariosController : ControllerBase
     {
         private readonly IRepositorioBase<ContextoTemplate, Usuario> _repositorio;
+        private readonly UserManager<Usuario> _userManager;
 
-        public UsuariosController(IRepositorioBase<ContextoTemplate, Usuario> repositorio)
+        public UsuariosController(IRepositorioBase<ContextoTemplate, Usuario> repositorio,
+            UserManager<Usuario> userManager)
         {
             _repositorio = repositorio;
+            _userManager = userManager;
         }
 
         // GET api/usuarios
@@ -36,9 +40,12 @@ namespace Template.Api.Controllers
 
         // POST api/usuarios
         [HttpPost]
-        public void Post([FromBody] Usuario usuario)
+        public async Task<IActionResult> Post([FromBody] Usuario usuario)
         {
-            _repositorio.Adicionar(usuario);
+            var usuarioCriado = await _userManager.CreateAsync(usuario, "P@ssw0rd!");
+            //_repositorio.Adicionar(usuario);
+
+            return Created("", null);
         }
 
         // PUT api/usuarios/5
