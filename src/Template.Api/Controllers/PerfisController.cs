@@ -41,12 +41,14 @@ namespace Template.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CriarPefil()
+        public async Task<IActionResult> CriarPefil([FromQuery] string nome)
         {
-            var perfil = new Perfil { Name = "Admin" };
-            
-            if (! await _perfilManager.RoleExistsAsync("Admin"))
-                await _perfilManager.CreateAsync(perfil);
+            var perfil = new Perfil { Name = nome };
+
+            if (await _perfilManager.RoleExistsAsync(nome))
+                return BadRequest($"Perfil '{nome}' já está cadastrado");
+
+           await _perfilManager.CreateAsync(perfil);
 
             return Created("", null);
         }
