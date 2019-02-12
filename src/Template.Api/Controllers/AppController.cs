@@ -12,7 +12,7 @@ namespace Template.Api.Controllers
     public class AppController : Controller
     {
         [HttpGet("index")]
-        [Authorize]
+        [Authorize(Policy = "ObrigatorioPerfilAdmin")]
         public IActionResult Index()
         {
             return View();

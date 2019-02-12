@@ -37,6 +37,15 @@ namespace Template.Api
 
             }).AddEntityFrameworkStores<ContextoTemplate>();
 
+            services.AddAuthorization(config => 
+            {
+                config.AddPolicy("ObrigatorioPerfilAdmin", builder =>
+                {
+                    builder.RequireAuthenticatedUser();
+                    builder.RequireRole("Admin");
+                });
+            });
+
             services.AddScoped(typeof(IRepositorioBase<,>), typeof(RepositorioBase<,>));
             services.AddScoped(typeof(IRepositorioBaseSomenteLeitura<,>), typeof(RepositorioBaseSomenteLeitura<,>));
 
